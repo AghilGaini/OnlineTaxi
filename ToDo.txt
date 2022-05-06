@@ -1,4 +1,12 @@
 T- Use SweetAlert to show information in active user View
 Q- What is TempData[] (focus on its LifeTime)
+Q- Use fonts
+
+
+
+
+
+
+
 
 
