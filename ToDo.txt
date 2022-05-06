@@ -1,6 +1,13 @@
+T: ToDo		Q:Question	E:Extra
+--------------------------------------------------------------------------------------
 T- Use SweetAlert to show information in active user View
 Q- What is TempData[] (focus on its LifeTime)
-Q- Use fonts
+T- Use fonts
+T- Send Email
+
+
+
+
 
 
 
