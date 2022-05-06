@@ -1,3 +1,4 @@
+using Database.Domain.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using OnlineTaxi.DatabaseAccessLayer.EFCore.Context;
+using OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,13 @@ namespace OnlineTaxi.Site
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            #region Add Services
+
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            #endregion
+
             services.AddMvc(options => options.EnableEndpointRouting = false);
             services.AddDbContext<ApplicationContext>(options =>
             options.UseSqlServer(Config.GetConnectionString("OnlineTaxi")));
@@ -40,6 +49,8 @@ namespace OnlineTaxi.Site
 
             app.UseRouting();
             app.UseMvcWithDefaultRoute();
+
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {

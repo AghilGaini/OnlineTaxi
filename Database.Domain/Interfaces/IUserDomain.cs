@@ -9,5 +9,7 @@ namespace Database.Domain.Interfaces
 {
     public interface IUserDomain : IGenericDomain<UserDomain>
     {
+        public bool HasUsername(string username);
+        public UserDomain GetUser(string username);
     }
 }

@@ -1,0 +1,44 @@
+﻿@model ActiveUserModelView
+@{
+    ViewBag.Title = "Active";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
+}
+
+@if (@ViewBag.Success != null)
+{
+    <script>
+        console.log("Success");
+    </script>
+}
+else
+{
+    <script>
+        console.log("Else Success");
+    </script>
+}
+
+@if (@ViewBag.Error != null)
+{
+    <script>
+        console.log("@ViewBag.Error");
+    </script>
+}
+else
+{
+    <script>
+        console.log("Else Error");
+    </script>
+}
+
+<h1>Enter your activation code</h1>
+<h3>Username : @ViewBag.Username</h3>
+<form method="post" asp-action="ActiveUser" asp-controller="Account">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <input asp-for="Username" type="hidden" value="@ViewBag.Username" />
+        <label for="txtActiveCode">Active Code</label>
+        <input asp-for="ActiveCode" type="text" id="txtActiveCode" placeholder="Activation Code..." class="form-control" />
+        <span asp-validation-for="ActiveCode" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Active</button>
+</form>

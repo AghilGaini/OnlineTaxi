@@ -14,9 +14,9 @@ namespace OnlineTaxi.Core.Generators
             return rnd.Next(1000000, 999999999).ToString();
         }
 
-        public static string GetId()
+        public static Guid GetId()
         {
-            return Guid.NewGuid().ToString();
+            return Guid.NewGuid();
         }
 
         public static string GetFileName()

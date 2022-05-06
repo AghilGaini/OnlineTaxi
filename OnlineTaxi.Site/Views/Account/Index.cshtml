@@ -1,12 +1,15 @@
 ﻿@model RegisterAccountViewModel
 @{
     ViewBag.Title = "Account";
+    Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
-
 <h1>Welcome to MyOnlineTaxi</h1>
-<form method="post" action="Register">
-    <div>
+<form method="post" asp-action="Register" asp-controller="Account">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
         <label for="txtMobileNumber">Mobile Number</label>
-        <input asp-for="Username" type="text" id="txtMobileNumber" placeholder="Mobile number" />
+        <input asp-for="Username" type="text" id="txtMobileNumber" placeholder="Mobile number" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
     </div>
+    <button type="submit" class="btn btn-primary">Get Verify Code</button>
 </form>
