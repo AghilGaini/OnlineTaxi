@@ -1,4 +1,5 @@
-﻿using Database.Domain.Interfaces;
+﻿using Database.Domain.Entities;
+using Database.Domain.Interfaces;
 using Database.Domain.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using OnlineTaxi.Core.Generators;
@@ -35,13 +36,28 @@ namespace OnlineTaxi.Site.Controllers
                 else
                 {
                     //Create user and send verify code
-                    user = new Database.Domain.Entities.UserDomain()
+                    var role = _unitOfWork._role.GetByRoleName("user");
+                    if (role == null)
+                    {
+                        ViewBag.Error = "Role not found";
+                        return View("Index");
+                    }
+
+                    user = new UserDomain()
                     {
                         Id = CodeGenerators.GetId(),
+                        RoleId = role.Id,
                         IsActive = false,
                         Password = CodeGenerators.GetActiveCode(),
                         Username = model.Username
                     };
+
+                    var newUserDetail = new UserDetailDomain()
+                    {
+                        UserId = user.Id,
+                    };
+
+                    _unitOfWork._userDetail.Add(newUserDetail);
 
                     _unitOfWork._user.Add(user);
 
@@ -51,7 +67,7 @@ namespace OnlineTaxi.Site.Controllers
                 TempData["Username"] = user.Username;
                 return RedirectToAction("ActiveUser");
             }
-            return View();
+            return View("Index");
         }
 
         [HttpGet]

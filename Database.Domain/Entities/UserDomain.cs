@@ -15,6 +15,7 @@ namespace Database.Domain.Entities
         public Guid Id { get; set; }
         [Required]
         public Guid RoleId { get; set; }
+        public long Wallet { get; set; }
         [Required]
         [Display(Name = "نام کاربری")]
         public string Username { get; set; }

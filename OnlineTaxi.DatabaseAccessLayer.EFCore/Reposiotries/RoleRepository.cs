@@ -17,5 +17,10 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         {
             _context = context;
         }
+
+        public RoleDomain GetByRoleName(string roleName)
+        {
+            return _context.Roles.FirstOrDefault(r => r.Name == roleName);
+        }
     }
 }
