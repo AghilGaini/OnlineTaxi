@@ -16,7 +16,7 @@ namespace Database.Domain.Entities
         public Guid UserId { get; set; }
         [ForeignKey("Car")]
         public Guid? CarId { get; set; }
-        [ForeignKey("Car")]
+        [ForeignKey("Color")]
         public Guid? ColorId { get; set; }
         public string CardCode { get; set; }
         public string Img { get; set; }

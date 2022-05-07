@@ -15,6 +15,9 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         public IUserDomain _user { get; set; }
         public IUserDetailDomain _userDetail { get; set; }
         public IRoleDomain _role { get; set; }
+        public ICarDomain _car { get; set; }
+        public IColorDomain _color { get; set; }
+        public IDriverDomain _driver { get; set; }
 
         public UnitOfWork(ApplicationContext context)
         {
@@ -22,6 +25,9 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
             _user = new UserRepository(context);
             _userDetail = new UserDetailRepository(context);
             _role = new RoleRepository(context);
+            _car = new CarRepository(context);
+            _color = new ColorRepository(context);
+            _driver = new DriverRepository(context);
         }
 
         public void Dispose()
@@ -33,6 +39,9 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         public void Complete()
         {
             _context.SaveChanges();
+
+            if (_context != null)
+                this.Dispose();
         }
     }
 }

@@ -11,6 +11,10 @@ namespace Database.Domain.Interfaces
         public IUserDomain _user { get; set; }
         public IUserDetailDomain _userDetail { get; set; }
         public IRoleDomain _role { get; set; }
+        public ICarDomain _car { get; set; }
+        public IColorDomain _color { get; set; }
+        public IDriverDomain _driver { get; set; }
+
         public void Complete();
     }
 }

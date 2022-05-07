@@ -17,5 +17,8 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Context
         public DbSet<UserDomain> Users { get; set; }
         public DbSet<RoleDomain> Roles { get; set; }
         public DbSet<UserDetailDomain> UsersDetail { get; set; }
+        public DbSet<DriverDomain> Drivers { get; set; }
+        public DbSet<ColorDomain> Colors { get; set; }
+        public DbSet<CarDomain> Cars { get; set; }
     }
 }
