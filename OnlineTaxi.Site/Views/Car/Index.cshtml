@@ -1,13 +1,34 @@
 ﻿@model List<CarsViewModel>
 @{
     ViewBag.Title = "Cars";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-@foreach (var item in Model)
-{
-    <h3>Name : @item.Name</h3>
-}
+<h3>Show list of Cars</h3>
 
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                    <input asp-for="@item.Id" type="hidden">
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
 
 
 
