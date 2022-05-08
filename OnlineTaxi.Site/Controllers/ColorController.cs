@@ -114,5 +114,25 @@ namespace OnlineTaxi.Site.Controllers
 
         #endregion
 
+        #region Delete
+
+        [HttpGet]
+        public IActionResult Delete(Guid Id)
+        {
+            var color = _unitOfWork._color.GetByID(Id);
+
+            if (color == null)
+            {
+                ModelState.AddModelError("", "رنگ پیدا نشد");
+            }
+
+            _unitOfWork._color.Remove(color);
+            _unitOfWork.Complete();
+
+            return RedirectToAction("Index");
+        }
+
+        #endregion
+
     }
 }
