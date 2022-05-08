@@ -1,0 +1,37 @@
+﻿@model Database.Domain.ViewModels.AppSetting.TotalInformationViewModel
+@{
+    ViewBag.Title = "تنظیمات کلی برنامه";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" asp-action="TotalInformation">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <div>
+            <label asp-for="Name">نام برنامه</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <input asp-for="KeyString" type="hidden" />
+        </div>
+        <div>
+            <label asp-for="Fax">فاکس</label>
+            <input asp-for="Fax" class="form-control" />
+            <span asp-validation-for="Fax" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Tel">تلفن ثابت</label>
+            <input asp-for="Tel" class="form-control" />
+            <span asp-validation-for="Tel" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Description">توضیحات</label>
+            <input asp-for="Description" class="form-control" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">ذخیره</button>
+    <a asp-action="Index" asp-controller="Admin" class="btn btn-danger">
+        بازگشت
+    </a>
+</form>
+

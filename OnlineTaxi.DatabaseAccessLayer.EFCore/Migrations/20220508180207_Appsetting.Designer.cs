@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OnlineTaxi.DatabaseAccessLayer.EFCore.Context;
 
 namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    partial class ApplicationContextModelSnapshot : ModelSnapshot
+    [Migration("20220508180207_Appsetting")]
+    partial class Appsetting
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,10 +124,10 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Migrations
                     b.Property<string>("Fax")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool?>("IsDitanceEffect")
+                    b.Property<bool>("IsDitanceEffect")
                         .HasColumnType("bit");
 
-                    b.Property<bool?>("IsWeatherEffect")
+                    b.Property<bool>("IsWeatherEffect")
                         .HasColumnType("bit");
 
                     b.Property<string>("Name")

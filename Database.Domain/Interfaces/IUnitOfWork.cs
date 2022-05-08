@@ -14,6 +14,7 @@ namespace Database.Domain.Interfaces
         public ICarDomain _car { get; set; }
         public IColorDomain _color { get; set; }
         public IDriverDomain _driver { get; set; }
+        public ISettingDomain _setting { get; set; }
 
         public void Complete();
     }
