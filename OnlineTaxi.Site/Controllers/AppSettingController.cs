@@ -61,7 +61,9 @@ namespace OnlineTaxi.Site.Controllers
             return View(model);
         }
 
-        #endregion 
+        #endregion
+
+        #region AboutUs
 
         [HttpGet]
         public IActionResult AboutUs()
@@ -91,7 +93,7 @@ namespace OnlineTaxi.Site.Controllers
                 if (oldInfo == null)
                 {
                     ModelState.AddModelError("", "تنظیمات پیدا نشد");
-                    return View("TotalInformation", model);
+                    return View("AboutUs", model);
                 }
 
                 oldInfo.About = model.AboutUS;
@@ -103,5 +105,54 @@ namespace OnlineTaxi.Site.Controllers
             }
             return View(model);
         }
+
+        #endregion
+
+        #region AboutUs
+
+        [HttpGet]
+        public IActionResult Terms()
+        {
+            var appSetting = _unitOfWork._setting.GetByKey("ApplicationSetting");
+            if (appSetting == null)
+            {
+                ModelState.AddModelError("", "تنظیمات برنامه پیدا نشد");
+                return View();
+            }
+
+            var res = new TermsViewModel()
+            {
+                KeyString = appSetting.KeyString,
+                Terms = appSetting.Terms
+            };
+
+            return View(res);
+        }
+
+        [HttpPost]
+        public IActionResult Terms(TermsViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var oldInfo = _unitOfWork._setting.GetByKey(model.KeyString);
+                if (oldInfo == null)
+                {
+                    ModelState.AddModelError("", "تنظیمات پیدا نشد");
+                    return View("Terms", model);
+                }
+
+                oldInfo.Terms = model.Terms;
+
+                _unitOfWork._setting.Update(oldInfo);
+                _unitOfWork.Complete();
+
+                return RedirectToAction("Index", "Admin");
+            }
+            return View(model);
+        }
+
+        #endregion
+
+
     }
 }

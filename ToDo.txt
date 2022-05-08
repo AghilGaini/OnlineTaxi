@@ -1,15 +1,22 @@
 T: ToDo		Q:Question	E:Extra
 --------------------------------------------------------------------------------------
+Day: 
+
+
+--------------------------------------------------------------------------------------
 T- Use SweetAlert to show information in active user View
 T- insert in UserDetail table when created account
 T- Assign User Role when created account 
 T- Diplay Name for columns of tables
-Q- What is TempData[] (focus on its LifeTime)
-Q- Async Await
 T- Use fonts
 T- Send Email
 T- Delte Action in color controller
-
+T- Use HTML Editor for "AboutUs" and "Terms"
+T- Pagination for tables 
+T- search for tables
+--------------------------------------------------------------------------------------
+Q- What is TempData[] (focus on its LifeTime)
+Q- Async Await
 
 
 
