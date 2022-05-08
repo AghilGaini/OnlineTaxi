@@ -6,26 +6,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Database.Domain.ViewModels.Car
+namespace Database.Domain.ViewModels.Color
 {
-    public class CarsViewModel
+    public class ColorsViewModel
     {
-        public CarsViewModel()
+        public ColorsViewModel()
         {
             Actions = new List<ActionItem>();
-            CarsInfo = new List<CarInfoViewModel>();
+            ColorsInfo = new List<ColorInfoViewModel>();
         }
+
         public List<ActionItem> Actions { get; set; }
-        public List<CarInfoViewModel> CarsInfo { get; set; }
+        public List<ColorInfoViewModel> ColorsInfo { get; set; }
     }
-    public class CarInfoViewModel
+
+    public class ColorInfoViewModel
     {
         [Required]
         [Display(Name = "شناسه")]
         public Guid Id { get; set; }
         [Required]
-        [Display(Name = "نام ماشین")]
+        [Display(Name = "نام رنگ")]
         public string Name { get; set; }
+        [Required]
+        [Display(Name = "کد رنگ")]
+        public string Code { get; set; }
     }
 
 }

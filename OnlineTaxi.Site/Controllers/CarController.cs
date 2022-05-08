@@ -12,22 +12,25 @@ namespace OnlineTaxi.Site.Controllers
     public class CarController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
-
         public CarController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
+
         public IActionResult Index()
         {
             var res = _unitOfWork._car.GetAll();
-            var cars = new List<CarsViewModel>();
+            var cars = new CarsViewModel();
             foreach (var item in res)
             {
-                cars.Add(new CarsViewModel() { Id = item.Id, Name = item.Name });
+                cars.CarsInfo.Add(new CarInfoViewModel() { Id = item.Id, Name = item.Name });
             }
+
+            cars.Actions.Add(new Database.Domain.Model.ActionItem() { Action = "Edit", Controller = "Car", Title = "ویرایش" });
+            cars.Actions.Add(new Database.Domain.Model.ActionItem() { Action = "Delete", Controller = "Car", Title = "حذف" });
+
             return View(cars);
         }
-
 
         #region Create
 

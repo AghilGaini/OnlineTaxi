@@ -8,7 +8,7 @@ Q- What is TempData[] (focus on its LifeTime)
 Q- Async Await
 T- Use fonts
 T- Send Email
-
+T- Delte Action in color controller
 
 
 

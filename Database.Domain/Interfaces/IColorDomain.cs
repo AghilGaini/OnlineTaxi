@@ -9,5 +9,6 @@ namespace Database.Domain.Interfaces
 {
     public interface IColorDomain : IGenericDomain<ColorDomain>
     {
+        bool IsDuplicateByCodeAndName(string name, string code, Guid id);
     }
 }
