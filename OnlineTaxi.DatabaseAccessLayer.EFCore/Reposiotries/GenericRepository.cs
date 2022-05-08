@@ -30,5 +30,32 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         {
             return _context.Set<T>().ToList();
         }
+
+        public T GetByID(Guid id)
+        {
+            return _context.Set<T>().Find(id);
+        }
+
+        public T GetByID(long id)
+        {
+            return _context.Set<T>().Find(id);
+        }
+
+        public bool Remove(T entity)
+        {
+            if (entity == null)
+                return false;
+
+            _context.Set<T>().Remove(entity);
+            return true;
+        }
+
+        public bool Update(T entity)
+        {
+            if (entity == null)
+                return false;
+            _context.Set<T>().Update(entity);
+            return true;
+        }
     }
 }

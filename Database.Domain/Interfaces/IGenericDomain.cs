@@ -11,5 +11,9 @@ namespace Database.Domain.Interfaces
         public List<T> GetAll();
         public void Add(T entity);
         public void AddRange(IEnumerable<T> entities);
+        public T GetByID(Guid id);
+        public T GetByID(long id);
+        public bool Update(T entity);
+        public bool Remove(T entity);
     }
 }

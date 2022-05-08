@@ -30,9 +30,30 @@ Create Views and controller for show and create list of cars
 ------------------------------------------------------------
 3-9 : Search on table with jquery and manage cars CRUD actions
 
+________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________
 
-
-
+4-1 : Create CRUD actions for color interface
+------------------------------------------------------------
+4-2 : Controller and Action for show,Edit,Delete Colors
+**get color code and show it with input type =color
+------------------------------------------------------------
+4-3 : Create RateType table : Id,Name,Ok,ViewOrder
+------------------------------------------------------------
+4-4 : Create CRUD action for RateType interface
+------------------------------------------------------------
+4-5 : Cotnroller and Actions for show,edit,delete RateTypes
+------------------------------------------------------------
+4-6 : Create table Setting : Id,Name,Description,About,Terms,Tel,Fax,IsWeatherEffect,IsDistanceEffect
+------------------------------------------------------------
+4-7 : Controller and Actions for Setting  (Except price setting and About)
+------------------------------------------------------------
+4-8 : Controller and Actions for Price Setting  
+------------------------------------------------------------
+4-9 : Controller and Actions for About Setting 
+** Use CkEditor
+------------------------------------------------------------
+4-10 : Controller and Actions for Terms Setting  (Use ckEditor)
 
 
 

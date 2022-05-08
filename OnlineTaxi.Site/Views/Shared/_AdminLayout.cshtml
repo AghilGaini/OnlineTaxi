@@ -12,6 +12,32 @@
 
 </head>
 <body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">Aghil-WebPanel</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-action="Index" asp-controller="Car">مدیریت ماشین</a>
+                </li>
+
+                @*<li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    University
+                    </a>
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" asp-action="Index" asp-controller="Student">Students</a>
+                    <a class="dropdown-item" asp-action="Index" asp-controller="Course">Courses</a>
+                    </div>
+                    </li>*@
+            </ul>
+
+        </div>
+    </nav>
+
     <div class="container">
         @RenderBody()
     </div>

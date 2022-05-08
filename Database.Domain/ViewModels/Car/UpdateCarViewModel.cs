@@ -5,17 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Database.Domain.Entities
+namespace Database.Domain.ViewModels.Car
 {
-    public class ColorDomain
+    public class UpdateCarViewModel
     {
         [Required]
         public Guid Id { get; set; }
         [Required]
-        [Display(Name = "نام رنگ")]
         public string Name { get; set; }
-        [Display(Name = "کد رنگ")]
-        public string Code { get; set; }
-        public virtual ICollection<DriverDomain> Drivers { get; set; }
     }
 }

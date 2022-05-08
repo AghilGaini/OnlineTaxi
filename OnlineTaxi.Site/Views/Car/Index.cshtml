@@ -1,16 +1,16 @@
-﻿@model List<CarsViewModel>
+﻿@model List<Database.Domain.ViewModels.Car.CarsViewModel>
 @{
-    ViewBag.Title = "Cars";
+    ViewBag.Title = "مدیریت ماشین";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h3>Show list of Cars</h3>
+<h3>لیست ماشین ها</h3>
 
 <table class="table table-dark">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Actions</th>
+            <th>نام ماشین</th>
+            <th>عملیات</th>
         </tr>
     </thead>
     <tbody>
@@ -22,13 +22,15 @@
                     <input asp-for="@item.Id" type="hidden">
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-primary">Edit</a>
-                    <a asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger">Delete</a>
+                    <a asp-action="Edit" asp-route-Id="@item.Id" class="btn btn-primary">ویرایش</a>
+                    <a asp-action="Delete" asp-route-Id="@item.Id" class="btn btn-danger">حذف</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
+<a asp-action="Create" asp-controller="car" class="btn btn-success">
+    جدید
+</a>
 
 
