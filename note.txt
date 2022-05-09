@@ -1,3 +1,77 @@
+1-2:
+Snapp.DataAccessLayer -> Entities,Context
+Snapp.Core -> Generators,Interfaces,Securities,Senders,Services,ViewModels
+*Add References  these two projects to the snapp.site project
+---------------------------------------------------------------------------------------------------------------
+1-3:
+install these for EFCore ->
+	Microsoft.EntityFrameworkCore
+	Microsoft.EntityFrameworkCore.Tools
+	Microsoft.EntityFrameworkCore.Sql
+---------------------------------------------------------------------------------------------------------------
+1-4:
+Create static class for send SMS
+---------------------------------------------------------------------------------------------------------------
+1-5:
+Create static class for send Email
+---------------------------------------------------------------------------------------------------------------
+1-6:
+Generators:
+	CodeGenerators: GetActiveCode,GetId,GetFileName,GetOrderCode
+	DateTimeGenerators : GetShamsiDate,GetShamsiTime
+---------------------------------------------------------------------------------------------------------------
+1-7:
+Securities : 
+	HashEncode : GetHashCode
+---------------------------------------------------------------------------------------------------------------
+1-8:
+Startup:
+	services.AddMvc(options => options.EnableEndpoinRouting = false)
+	app.UseMvcWithDefaultRoute()
+---------------------------------------------------------------------------------------------------------------
+1-9:
+Add DbContext in startup and use migration to create Database
+---------------------------------------------------------------------------------------------------------------
+2-1:
+[DatabaseGenerated(DatabaseGeneratedOptions.None)] --> dont use identity for primary key
+Create Role table : ID,Title,Name
+---------------------------------------------------------------------------------------------------------------
+2-2:
+???? ToListAsync
+**** Interfaces must be inherited from IDisposable
+---------------------------------------------------------------------------------------------------------------
+2-3:
+Test for Repository Pattern
+---------------------------------------------------------------------------------------------------------------
+2-4:
+User Table : Id,RoleId,Username,Password,Token,IsActive,
+In Role Table : public virtual ICollection<User> Users
+In User Table : public virtual Role  -->(with [ForeignKey("RoleID")] , public Virtual UserDetail 
+UserDetail Table : [Key][ForeignKey("User")]UserId,Date,Time,FullName,BirthDate,Virtual User
+---------------------------------------------------------------------------------------------------------------
+2-5 and 2-6:
+Create wlcome page and get mobile number 
+---------------------------------------------------------------------------------------------------------------
+2-7 : 
+???? Task.FromResult(myObject)
+Create Service for Register user(if user is new : create user and send sms else just send sms )
+**** use async await
+---------------------------------------------------------------------------------------------------------------
+2-8 : 
+Test for register a user
+---------------------------------------------------------------------------------------------------------------
+2-9 :
+---------------------------------------------------------------------------------------------------------------
+2-10 : 
+Create Active method in account service to active a user
+---------------------------------------------------------------------------------------------------------------
+2-11:
+Create Active action and view for users
+use from sweet.js (sweet alert) for showing messages
+-> swal("Ekhtar","Code eshtebah vared shode ast","Warning",{button : "motevajeh shodam"})
+---------------------------------------------------------------------------------------------------------------
+**** What is TempData[] its life time)
+_________________________________________________________________________________________________________________
 3-1:
 -----------------------------------------------------------
 3-2 : 
