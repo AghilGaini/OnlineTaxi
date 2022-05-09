@@ -1,0 +1,34 @@
+﻿@model Database.Domain.ViewModels.RateType.UpdateRateTypeViewModel
+
+@{
+    ViewBag.Title = "ویرایش ماشین";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" asp-action="Edit">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <div>
+            <input asp-for="Id" type="hidden" />
+
+            <label asp-for="Name">نام</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Ok">نوع نظر</label>
+            <input asp-for="Ok" type="checkbox" class="form-control" />
+            <span asp-validation-for="Ok" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="ViewOrder">ترتیب نمایش</label>
+            <input asp-for="ViewOrder" class="form-control" />
+            <span asp-validation-for="ViewOrder" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">ذخیره</button>
+    <a asp-action="Index" class="btn btn-danger">
+        بازگشت
+    </a>
+</form>
+

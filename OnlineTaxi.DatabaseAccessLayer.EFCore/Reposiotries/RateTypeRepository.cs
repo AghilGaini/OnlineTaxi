@@ -17,5 +17,10 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         {
             _context = context;
         }
+
+        public bool IsDuplicateByName(string name, Guid id)
+        {
+            return _context.RateTypes.Any(t => t.Name == name && t.Id != id);
+        }
     }
 }

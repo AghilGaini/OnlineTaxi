@@ -9,5 +9,6 @@ namespace Database.Domain.Interfaces
 {
     public interface IRateTypeDomain : IGenericDomain<RateTypeDomain>
     {
+        bool IsDuplicateByName(string name, Guid id);
     }
 }
