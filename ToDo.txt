@@ -4,6 +4,9 @@ Day:
 
 
 --------------------------------------------------------------------------------------
+T- Create RateType table
+T- Iranian NationalCode check verification
+T- Use CkEditor for HTML Editor input
 T- Use SweetAlert to show information in active user View
 T- insert in UserDetail table when created account
 T- Assign User Role when created account 

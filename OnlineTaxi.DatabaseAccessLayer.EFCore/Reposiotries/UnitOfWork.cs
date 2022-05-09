@@ -19,6 +19,7 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         public IColorDomain _color { get; set; }
         public IDriverDomain _driver { get; set; }
         public ISettingDomain _setting { get; set; }
+        public IRateTypeDomain _rateType { get; set; }
 
         public UnitOfWork(ApplicationContext context)
         {
@@ -30,6 +31,7 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
             _color = new ColorRepository(context);
             _driver = new DriverRepository(context);
             _setting = new SettingRepository(context);
+            _rateType = new RateTypeRepository(context);
         }
 
         public void Dispose()

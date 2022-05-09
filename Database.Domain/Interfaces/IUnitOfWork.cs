@@ -15,6 +15,7 @@ namespace Database.Domain.Interfaces
         public IColorDomain _color { get; set; }
         public IDriverDomain _driver { get; set; }
         public ISettingDomain _setting { get; set; }
+        public IRateTypeDomain _rateType { get; set; }
 
         public void Complete();
     }

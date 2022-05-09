@@ -1,0 +1,8 @@
+﻿@font-face {
+    font-family: Sarbaz;
+    src: url('../fonts/Sarbaz.ttf');
+}
+
+* {
+    font-family: Sarbaz;
+}
