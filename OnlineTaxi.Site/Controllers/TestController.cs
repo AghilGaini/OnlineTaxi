@@ -1,5 +1,6 @@
 ﻿using Database.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using OnlineTaxi.Core.Senders;
 
 namespace OnlineTaxi.Site.Controllers
 {
@@ -13,8 +14,8 @@ namespace OnlineTaxi.Site.Controllers
         }
         public IActionResult Index()
         {
-            var res = _unitOfWork._user.GetAll();
-            return View(res);
+            EmailSender.Send("aghilgaini@yahoo.com", "Test Subject", "Test body");
+            return View();
         }
     }
 }

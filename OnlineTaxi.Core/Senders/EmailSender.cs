@@ -29,6 +29,13 @@ namespace OnlineTaxi.Core.Senders
 
 
             SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Connect("smtp.gmail.com", 465, true);
+            smtpClient.Authenticate("Aghil1373@gmail.com", "zluhsfmkjkjkvwuq");
+
+            smtpClient.Send(message);
+            smtpClient.Disconnect(true);
+            smtpClient.Dispose();
+
 
             return true;
         }
