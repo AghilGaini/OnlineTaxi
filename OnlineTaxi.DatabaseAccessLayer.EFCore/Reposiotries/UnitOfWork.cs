@@ -20,6 +20,7 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         public IDriverDomain _driver { get; set; }
         public ISettingDomain _setting { get; set; }
         public IRateTypeDomain _rateType { get; set; }
+        public IEmailSettingDomain _emailSetting { get; set; }
 
         public UnitOfWork(ApplicationContext context)
         {
@@ -32,6 +33,7 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
             _driver = new DriverRepository(context);
             _setting = new SettingRepository(context);
             _rateType = new RateTypeRepository(context);
+            _emailSetting = new EmailSettingRepository(context);
         }
 
         public void Dispose()

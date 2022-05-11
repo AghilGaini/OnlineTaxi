@@ -16,6 +16,7 @@ namespace Database.Domain.Interfaces
         public IDriverDomain _driver { get; set; }
         public ISettingDomain _setting { get; set; }
         public IRateTypeDomain _rateType { get; set; }
+        public IEmailSettingDomain _emailSetting { get; set; }
 
         public void Complete();
     }

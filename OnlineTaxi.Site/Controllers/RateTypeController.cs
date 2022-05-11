@@ -31,7 +31,7 @@ namespace OnlineTaxi.Site.Controllers
             }
 
             rateTypes.Actions.Add(new Database.Domain.Model.ActionItem() { Controller = "RateType", Action = "Edit", Title = "ویرایش" });
-            rateTypes.Actions.Add(new Database.Domain.Model.ActionItem() { Controller = "RateType", Action = "Edit", Title = "حذف" });
+            rateTypes.Actions.Add(new Database.Domain.Model.ActionItem() { Controller = "RateType", Action = "Delete", Title = "حذف" });
 
             return View(rateTypes);
         }
