@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Database.Domain.Interfaces;
 using MailKit.Net.Smtp;
 using MimeKit;
 
@@ -10,6 +11,7 @@ namespace OnlineTaxi.Core.Senders
 {
     public static class EmailSender
     {
+
         public static bool Send(string to, string subject, string body)
         {
             MimeMessage message = new MimeMessage();

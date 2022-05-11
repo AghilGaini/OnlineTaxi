@@ -9,7 +9,6 @@ namespace Database.Domain.Interfaces
 {
     public interface IEmailSettingDomain : IGenericDomain<EmailSettingDomain>
     {
-
-
+        public bool IsDuplicateByAddress(string emailAddress, long Id);
     }
 }

@@ -1,0 +1,42 @@
+﻿@model Database.Domain.ViewModels.EmailSetting.UpdateEmailSettingViewModel
+
+@{
+    ViewBag.Title = "ویرایش ایمیل";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" asp-action="Edit">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <div>
+            <label asp-for="Address">ایمیل</label>
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="SmtpServer">سرورو SMTP</label>
+            <input asp-for="SmtpServer" class="form-control" />
+            <span asp-validation-for="SmtpServer" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="SmtpPort">Smtp Port</label>
+            <input asp-for="SmtpPort" class="form-control" />
+            <span asp-validation-for="SmtpPort" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="UseSSL">استفاده از SSL</label>
+            <input asp-for="UseSSL" class="form-control" />
+            <span asp-validation-for="UseSSL" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Password">رمز</label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">ذخیره</button>
+    <a asp-action="Index" class="btn btn-danger">
+        بازگشت
+    </a>
+</form>
+

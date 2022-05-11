@@ -5,12 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Database.Domain.Entities
+namespace Database.Domain.ViewModels.EmailSetting
 {
-    public class EmailSettingDomain
+    public class NewEmailSettingViewModel
     {
-        [Required]
-        public long Id { get; set; }
         [Required]
         public string Address { get; set; }
         [Required]
@@ -19,6 +17,7 @@ namespace Database.Domain.Entities
         public int SmtpPort { get; set; }
         public bool? UseSSL { get; set; }
         [Required]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 }
