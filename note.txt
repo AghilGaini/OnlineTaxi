@@ -148,8 +148,32 @@ ________________________________________________________________________________
 6-1 : Add Humidity table : Id,Name,Start,End,Percent
 Add Temperature table : Id,Name,Start,End,Percent
 ---------------------------------------------------------------------------------------------------------------
-
-
+6-2 : Add CRUD interface for Humidity and Temperature
+---------------------------------------------------------------------------------------------------------------
+6-3 : Add Controller and View for Humidity and Temperature
+---------------------------------------------------------------------------------------------------------------
+6-4 : 
+---------------------------------------------------------------------------------------------------------------
+6-5 : Install EPPlus pakage (for excel files)
+-Create sample excel file and put it in : wwwroot/file/
+-for download sample file create <a> with with target="_blank"
+-for upload use IForm 
+-for upload the <form> must use enctype="multipart/form-data"
+*Create import excel for Car table
+________________________________________________________________________________________________________________________
+________________________________________________________________________________________________________________________
+7-1 : CRUD interfaces for Role Table
+---------------------------------------------------------------------------------------------------------------
+7-2 , 7-3 : CRUD Controllers and Views for role
+---------------------------------------------------------------------------------------------------------------
+7-4 : CRUD for adding user (with selecting its role)
+---------------------------------------------------------------------------------------------------------------
+7-5 : Create SelectList and pass it in Viewbag to fill RoleId when adding user
+---------------------------------------------------------------------------------------------------------------
+7-6 : Complete User CRUD 
+****What do "include" for showing role in User page??????????????
+---------------------------------------------------------------------------------------------------------------
+7-7 : Update users with respect to UserDetail and Driver tables
 
 
 
