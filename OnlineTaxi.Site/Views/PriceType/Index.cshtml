@@ -1,0 +1,59 @@
+﻿@model Database.Domain.ViewModels.PriceType.PriceTypeViewModel
+@{
+    ViewBag.Title = "مدیریت تعرفه ها";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>لیست تعرفه ها</h3>
+
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th>نام تعرفه</th>
+            <th>از</th>
+            <th>تا</th>
+            <th>قیمت</th>
+            <th>عملیات</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PriceTypesInfo)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                    <input asp-for="@item.Id" type="hidden">
+                </td>
+                <td>
+                    @item.Start
+                </td>
+                <td>
+                    @item.End
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        عملیات
+                    </button>
+                    <div class="dropdown-menu shadow animated--grow-in">
+                        @foreach (var link in Model.Actions)
+                        {
+                            <a style='margin-right:16px' class="dropdown-item"
+                       asp-controller="@link.Controller" asp-action="@link.Action" asp-route-Id="@item.Id">
+                                @link.Title
+                            </a>
+                        }
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-action="Create" asp-controller="PriceType" class="btn btn-success">
+    جدید
+</a>
+
+
