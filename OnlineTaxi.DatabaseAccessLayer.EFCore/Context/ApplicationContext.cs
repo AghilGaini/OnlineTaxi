@@ -24,5 +24,6 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Context
         public DbSet<RateTypeDomain> RateTypes { get; set; }
         public DbSet<EmailSettingDomain> EmailSetting { get; set; }
         public DbSet<PriceTypeDomain> PriceTypes { get; set; }
+        public DbSet<MonthlyTypeDomain> MonthlyTypes { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace Database.Domain.Interfaces
         public IRateTypeDomain _rateType { get; set; }
         public IEmailSettingDomain _emailSetting { get; set; }
         public IPriceTypeDomain _priceType { get; set; }
-
+        public IMonthlyTypeDomain _monthlyType { get; set; }
         public void Complete();
     }
 }

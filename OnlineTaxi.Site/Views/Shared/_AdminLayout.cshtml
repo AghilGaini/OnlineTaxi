@@ -36,9 +36,16 @@
                     <a class="nav-link" asp-action="Index" asp-controller="EmailSetting">مدیریت ایمیل ها</a>
                 </li>
 
-                <li>
-                    <a class="nav-link" asp-action="Index" asp-controller="PriceType">مدیریت تعرفه ها</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        مدیریت تعرفه ها
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" asp-action="Index" asp-controller="PriceType">تاثیر آب و هوا و مسافت</a>
+                        <a class="dropdown-item" asp-action="Index" asp-controller="MonthlyType">تعرفه های ماهانه</a>
+                    </div>
                 </li>
+
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">

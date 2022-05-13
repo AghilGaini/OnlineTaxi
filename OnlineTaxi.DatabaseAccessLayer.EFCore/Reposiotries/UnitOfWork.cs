@@ -22,6 +22,7 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         public IRateTypeDomain _rateType { get; set; }
         public IEmailSettingDomain _emailSetting { get; set; }
         public IPriceTypeDomain _priceType { get; set; }
+        public IMonthlyTypeDomain _monthlyType { get; set; }
 
         public UnitOfWork(ApplicationContext context)
         {
@@ -36,6 +37,7 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
             _rateType = new RateTypeRepository(context);
             _emailSetting = new EmailSettingRepository(context);
             _priceType = new PriceTypeRepository(context);
+            _monthlyType = new MonthlyTypeRepository(context);
         }
 
         public void Dispose()
