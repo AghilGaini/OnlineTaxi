@@ -1,0 +1,27 @@
+﻿@model Database.Domain.ViewModels.AppSetting.PriceSettingViewModel
+@{
+    ViewBag.Title = "تنظیمات قیمت";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" asp-action="PriceSetting">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <div>
+            <label asp-for="IsDitanceEffect">تاثیر مسافت بر قیمت</label>
+            <input type="checkbox" asp-for="IsDitanceEffect" class="form-control" />
+            <span asp-validation-for="IsDitanceEffect" class="text-danger"></span>
+            <input asp-for="KeyString" type="hidden" />
+        </div>
+        <div>
+            <label asp-for="IsWeatherEffect">تاثیر آب و هوا بر قیمت</label>
+            <input type="checkbox" asp-for="IsWeatherEffect" class="form-control" />
+            <span asp-validation-for="IsWeatherEffect" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">ذخیره</button>
+    <a asp-action="Index" asp-controller="Admin" class="btn btn-danger">
+        بازگشت
+    </a>
+</form>
+

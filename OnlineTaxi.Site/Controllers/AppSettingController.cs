@@ -153,6 +153,54 @@ namespace OnlineTaxi.Site.Controllers
 
         #endregion
 
+        #region PriceSetting
+
+        [HttpGet]
+        public IActionResult PriceSetting()
+        {
+            var appSetting = _unitOfWork._setting.GetByKey("ApplicationSetting");
+            if (appSetting == null)
+            {
+                ModelState.AddModelError("", "تنظیمات برنامه پیدا نشد");
+                return View();
+            }
+
+            var res = new PriceSettingViewModel()
+            {
+                KeyString = appSetting.KeyString,
+                IsDitanceEffect = appSetting.IsDitanceEffect ?? false,
+                IsWeatherEffect = appSetting.IsWeatherEffect ?? false,
+            };
+
+            return View(res);
+
+        }
+
+        [HttpPost]
+        public IActionResult PriceSetting(PriceSettingViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var oldInfo = _unitOfWork._setting.GetByKey(model.KeyString);
+                if (oldInfo == null)
+                {
+                    ModelState.AddModelError("", "تنظیمات پیدا نشد");
+                    return View("PriceSetting", model);
+                }
+
+                oldInfo.IsDitanceEffect = model.IsDitanceEffect;
+                oldInfo.IsWeatherEffect = model.IsWeatherEffect;
+
+                _unitOfWork._setting.Update(oldInfo);
+                _unitOfWork.Complete();
+
+                return RedirectToAction("Index", "Admin");
+            }
+            return View(model);
+        }
+
+        #endregion
+
 
     }
 }
