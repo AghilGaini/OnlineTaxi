@@ -22,5 +22,10 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         {
             return _context.Roles.FirstOrDefault(r => r.Name == roleName);
         }
+
+        public bool IsDuplicateByName(string name, Guid id)
+        {
+            return _context.Roles.Any(r => r.Name == name && r.Id != id);
+        }
     }
 }

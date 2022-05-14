@@ -10,6 +10,6 @@ namespace Database.Domain.Interfaces
     public interface IRoleDomain : IGenericDomain<RoleDomain>
     {
         RoleDomain GetByRoleName(string roleName);
-
+        bool IsDuplicateByName(string name, Guid id);
     }
 }

@@ -1,0 +1,28 @@
+﻿@model Database.Domain.ViewModels.Role.UpdateRoleViewModel
+
+@{
+    ViewBag.Title = "ویرایش نقش";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" asp-action="Edit">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <div>
+            <label asp-for="Name">نام سیستمی</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+            <input asp-for="Id" type="hidden" />
+        </div>
+        <div>
+            <label asp-for="Title">نام</label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">ذخیره</button>
+    <a asp-action="Index" class="btn btn-danger">
+        بازگشت
+    </a>
+</form>
+
