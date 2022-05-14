@@ -20,6 +20,7 @@ namespace Database.Domain.Interfaces
         public IPriceTypeDomain _priceType { get; set; }
         public IMonthlyTypeDomain _monthlyType { get; set; }
         public IHumidityDomain _humidity { get; set; }
+        public ITemperatureDomain _temperature { get; set; }
         public void Complete();
     }
 }

@@ -24,6 +24,7 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
         public IPriceTypeDomain _priceType { get; set; }
         public IMonthlyTypeDomain _monthlyType { get; set; }
         public IHumidityDomain _humidity { get; set; }
+        public ITemperatureDomain _temperature { get; set; }
 
         public UnitOfWork(ApplicationContext context)
         {
@@ -40,6 +41,7 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
             _priceType = new PriceTypeRepository(context);
             _monthlyType = new MonthlyTypeRepository(context);
             _humidity = new HumidityRepository(context);
+            _temperature = new TemperatureRepository(context);
         }
 
         public void Dispose()
