@@ -11,5 +11,7 @@ namespace Database.Domain.Interfaces
     {
         public bool HasUsername(string username);
         public UserDomain GetUser(string username);
+        public List<UserDomain> GetUsersByRoleId(Guid roleId);
+
     }
 }

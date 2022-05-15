@@ -23,6 +23,11 @@ namespace OnlineTaxi.DatabaseAccessLayer.EFCore.Reposiotries
             return _context.Users.FirstOrDefault(x => x.Username == username);
         }
 
+        public List<UserDomain> GetUsersByRoleId(Guid roleId)
+        {
+            return _context.Users.Where(r => r.RoleId == roleId).ToList();
+        }
+
         public bool HasUsername(string username)
         {
             return _context.Users.Any(u => u.Username == username);
