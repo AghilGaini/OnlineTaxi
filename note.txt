@@ -1,49 +1,49 @@
-1-2:
+1-2 :
 Snapp.DataAccessLayer -> Entities,Context
 Snapp.Core -> Generators,Interfaces,Securities,Senders,Services,ViewModels
 *Add References  these two projects to the snapp.site project
 ---------------------------------------------------------------------------------------------------------------
-1-3:
+1-3 :
 install these for EFCore ->
 	Microsoft.EntityFrameworkCore
 	Microsoft.EntityFrameworkCore.Tools
 	Microsoft.EntityFrameworkCore.Sql
 ---------------------------------------------------------------------------------------------------------------
-1-4:
+1-4 :
 Create static class for send SMS
 ---------------------------------------------------------------------------------------------------------------
-1-5:
+1-5 :
 Create static class for send Email
 ---------------------------------------------------------------------------------------------------------------
-1-6:
+1-6 :
 Generators:
 	CodeGenerators: GetActiveCode,GetId,GetFileName,GetOrderCode
 	DateTimeGenerators : GetShamsiDate,GetShamsiTime
 ---------------------------------------------------------------------------------------------------------------
-1-7:
+1-7 :
 Securities : 
 	HashEncode : GetHashCode
 ---------------------------------------------------------------------------------------------------------------
-1-8:
+1-8 :
 Startup:
 	services.AddMvc(options => options.EnableEndpoinRouting = false)
 	app.UseMvcWithDefaultRoute()
 ---------------------------------------------------------------------------------------------------------------
-1-9:
+1-9 :
 Add DbContext in startup and use migration to create Database
 ---------------------------------------------------------------------------------------------------------------
-2-1:
+2-1 :
 [DatabaseGenerated(DatabaseGeneratedOptions.None)] --> dont use identity for primary key
 Create Role table : ID,Title,Name
 ---------------------------------------------------------------------------------------------------------------
-2-2:
+2-2 :
 ???? ToListAsync
 **** Interfaces must be inherited from IDisposable
 ---------------------------------------------------------------------------------------------------------------
-2-3:
+2-3 :
 Test for Repository Pattern
 ---------------------------------------------------------------------------------------------------------------
-2-4:
+2-4 :
 User Table : Id,RoleId,Username,Password,Token,IsActive,
 In Role Table : public virtual ICollection<User> Users
 In User Table : public virtual Role  -->(with [ForeignKey("RoleID")] , public Virtual UserDetail 
@@ -65,14 +65,14 @@ Test for register a user
 2-10 : 
 Create Active method in account service to active a user
 ---------------------------------------------------------------------------------------------------------------
-2-11:
+2-11 :
 Create Active action and view for users
 use from sweet.js (sweet alert) for showing messages
 -> swal("Ekhtar","Code eshtebah vared shode ast","Warning",{button : "motevajeh shodam"})
 ---------------------------------------------------------------------------------------------------------------
 **** What is TempData[] its life time)
 _________________________________________________________________________________________________________________
-3-1:
+3-1 :
 ---------------------------------------------------------------------------------------------------------------
 3-2 : 
 add "Long wallet" propery to User Table
@@ -183,7 +183,7 @@ Create ViewModel DeriverPropViewModel : string NationalCode,string Tel,string Ad
 Create Interface Actino for User : Update DriverProp
 upload driver avatar image (21:30)
 ---------------------------------------------------------------------------------------------------------------
-8-3: Create form for update DriverProp Info => form must be : enctype="multippart/form-data",  avatar Property must hav type="file"
+8-3 : Create form for update DriverProp Info => form must be : enctype="multippart/form-data",  avatar Property must hav type="file"
 ---------------------------------------------------------------------------------------------------------------
 8-4 : check for error when edit other info(except image)
 delete old image when new uploaded
@@ -197,10 +197,14 @@ ViewBag.CarId = New SelectList(GetCars(),"id","Name",model.cardId);
 ViewBag.ColorId = New SelectList(GetColors(),"id","Name",model.colorId);
 <select asp-for="RoleId" asp-Items="ViewBag.ColorId"></select>
 ---------------------------------------------------------------------------------------------------------------
-8-7: Create UserEditViewModel : RoleId,Username,Fullname,BirthDate,IsActive
+8-7 : Create UserEditViewModel : RoleId,Username,Fullname,BirthDate,IsActive
 update userDetail when click on update user action
 use persian calender to store and show BirthDate 
-
+---------------------------------------------------------------------------------------------------------------
+9-1 :
+---------------------------------------------------------------------------------------------------------------
+9-2 : in startup : 
+Configure servive : addAuthentication and use cookie method to authnetication
 
 
 

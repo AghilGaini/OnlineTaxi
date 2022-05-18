@@ -1,0 +1,3 @@
+11-3 : Create Factor Table : guid Id, guid UserId, string Date,string Time,string OrderNumber,int Price,string Desc,string BankName,[foreignkey("UserId")]Virtual User user
+in user table : Virtual ICollection<Factor> Factors
+add factor in Application Context
