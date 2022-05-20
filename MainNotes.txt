@@ -1,0 +1,9 @@
+-SignalR
+-Chart (chartjs)
+-Web Api
+-Email Sender
+-Payment (ZarinPal)
+-Weather Service
+-Map Service
+-Group Action
+-Authorization

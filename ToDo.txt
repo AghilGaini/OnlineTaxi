@@ -4,6 +4,10 @@ Day:
 
 
 --------------------------------------------------------------------------------------
+T- Use TT files to generate DB classes
+T- Different between app.UseAthentication and app.UseAuthorization (chapter 9)
+T- Use SweetAlert to show messages in all views (is possible use in shared layout)
+T- Persian DatePicker
 T- Iranian NationalCode check verification
 T- Use CkEditor for HTML Editor input
 T- Use SweetAlert to show information in active user View
@@ -15,7 +19,8 @@ T- search for tables
 --------------------------------------------------------------------------------------
 Q- What is TempData[] (focus on its LifeTime)
 Q- Async Await
-
+Q- IDisposable
+Q- what is Include in EFCore
 
 Links 
 http://www.binaryintellect.net/articles/e30d07c6-6f57-43e7-a2ce-6d2d67ebf403.aspx
