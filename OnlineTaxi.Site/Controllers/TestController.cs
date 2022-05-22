@@ -14,7 +14,7 @@ namespace OnlineTaxi.Site.Controllers
         }
         public IActionResult Index()
         {
-            EmailSender.Send("aghilgaini@yahoo.com", "Test Subject", "Test body");
+
             return View();
         }
     }

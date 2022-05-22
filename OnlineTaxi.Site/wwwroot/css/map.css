@@ -1,0 +1,12 @@
+﻿.mapButtons {
+    margin: 6px;
+}
+
+.mainMap {
+    margin: auto;
+}
+
+#map {
+    height: 88%;
+    width: 100%;
+}

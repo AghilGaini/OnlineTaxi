@@ -50,6 +50,11 @@ namespace OnlineTaxi.Site
             app.UseRouting();
             app.UseMvcWithDefaultRoute();
 
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("Test", "{controller=Test}/{Action=Index}/{Id?}");
+            });
+
             app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
