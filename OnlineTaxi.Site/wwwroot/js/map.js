@@ -117,5 +117,23 @@ function clearMarkers() {
     secondlatlng = {};
 }
 
+function clearLastMarker() {
+
+    if (markerArray.length <= 0)
+        return;
+
+    var remove = markerArray.pop();
+    map.removeLayer(remove);
+
+    if (secondTime == false) {
+        secondTime = true;
+        secondlatlng = {};
+    }
+    else {
+        firstTime = true;
+        firstlatlng = {};
+    }
+}
+
 map.on('click', onMapClick);
 //functions
